@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function Temperature(celsius) {
+        this.celsius = celsius;
+        this.toFahrenheit = function () {
+            return (this.celsius * 1.8) + 32;
+        };
+        this.toKenvin = function () {
+            return (this.celsius + 273.15);
+        }
+    }
+    //Khởi tạo đối tượng
+    let temp = new Temperature(25);
+    alert(temp.celsius + " độ C bằng " + temp.toFahrenheit() + " độ F");
+    alert(temp.celsius + " độ C bằng " + temp.toKenvin() + " độ K");
+</script>
+</body>
+</html>

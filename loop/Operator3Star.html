@@ -13,12 +13,17 @@
 
 <!--Còn lại hiển thị chuỗi rỗng-->
 <script>
-    let login=prompt("nhập tên đăng nhập");
+   let login = (prompt("Nhập "));
     let mess = (login=='employee')?
+
         'Hello':
+
                 (login=='director')?
+
             'Greetings':
+
                     (login=='')?
+
                 'Nologin':
                 '';
     alert(mess);

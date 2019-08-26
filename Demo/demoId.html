@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo storage in Javascript</title>
+</head>
+<body>
+<div style="border: 1px solid #FAA">
+    <h3>Concat</h3>
+    <input type="text" id="string1" onkeyup="concat()">
+    <input type="text" id="string2" onkeyup="concat()">
+    <p id="concat"></p>
+</div>
+<div style="border: 1px solid #AAF">
+    <h3>Sum</h3>
+    <input type="text" id="number1" onkeyup="sum()">
+    <input type="text" id="number2" onkeyup="sum()">
+    <p id="sum"></p>
+</div>
+<div style="border: 1px solid #AAF">
+    <h3>Calculator</h3>
+    <input type="text" id="arg1">
+    <input type="text" id="arg2">
+    <p id="result"></p>
+    <input type="button" value="+" onclick="plus()">
+    <input type="button" value="-" onclick="sub()">
+    <input type="button" value="Use" onclick="useValue()">
+</div>
+
+<div>
+    <table style="border: 1px solid #0F0;">
+        <tr>
+            <td rowspan="2">
+                Điện
+            </td>
+            <td>
+                Công tắc 1
+                <input id="switch1" type="checkbox" onclick="checkLampStatus()">
+            </td>
+            <td rowspan="2">
+                Sáng
+                <input id="lamp" type="checkbox" disabled>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Công tắc 2
+                <input id="switch2" type="checkbox" onclick="checkLampStatus()">
+            </td>
+        </tr>
+    </table>
+</div>
+<script>
+    function concat() {
+        let string1 = document.getElementById("string1").value;
+        let string2 = document.getElementById("string2").value;
+        document.getElementById("concat").innerText = string1 + " " + string2;
+    }
+
+    function sum() {
+        let value1 = document.getElementById("number1").value;
+        let number1 = Number(value1);
+
+        let value2 = document.getElementById("number2").value;
+        let number2 = Number(value2);
+
+        let sum = number1 + number2;
+        document.getElementById("sum").innerText = sum;
+    }
+
+    function plus() {
+        let value1 = document.getElementById("arg1").value;
+        let number1 = Number(value1);
+
+        let value2 = document.getElementById("arg2").value;
+        let number2 = Number(value2);
+
+        let sum = number1 + number2;
+        document.getElementById("result").innerText = sum;
+    }
+
+    function sub() {
+        let value1 =document.getElementById("arg1").value;
+        let number1= Number(value1);
+
+        let value2 = document.getElementById("arg2").value;
+        let number2=Number(value2);
+
+        let sub=number1 - number2;
+        document.getElementById("result").innerText=sub;
+    }
+
+    function useValue() {
+        document.getElementById("arg1").value =
+            document.getElementById("result").innerText;
+        document.getElementById("arg2").value = "";
+        document.getElementById("result").innerText = "";
+        document.getElementById("arg2").focus();
+    }
+
+    function checkLampStatus() {
+        let switch1On = document.getElementById("switch1").checked;
+        let switch2On = document.getElementById("switch2").checked;
+        let lampStatus = switch1On || switch2On;
+        document.getElementById("lamp").checked = lampStatus;
+    }
+</script>
+</body>
+</html>

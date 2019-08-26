@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function MyDate(day, month, year) {
+        this.day = day;
+        this.month = month;
+        this.year = year;
+        this.date = function () {
+            return   this.day +   this.month  + this.year;
+        };
+        this.getDay = function () {
+            return  this.day;
+        };
+        this.getMonth = function () {
+            return  this.month;
+        };
+        this.getYear = function () {
+            return this.year;
+        };
+        this.setDay = function (day) {
+            this.day = day;
+        };
+        this.setMonth = function (month) {
+            this.month = month;
+        };
+        this.setYear = function (year) {
+            this.year = year;
+        };
+        this.setDate = function (day, month, year) {
+            this.day = day;
+            this.month = month;
+            this.year = year;
+        };
+        this.toString = function () {
+            return this.day + "/" + this.month + "/" + this.year;
+        }
+    }
+
+
+    //Tạo đối tượng date với ngày:3, tháng:3, năm: 2017:
+    let date = new MyDate(3, 3, 2017);
+
+    //Truy cập phương thức của lớp date:
+    let day = date.getDay();
+    let month = date.getMonth();
+    let year = date.getYear();
+
+
+    //Hiển thị ngày, tháng, năm:
+    alert(day+'/'+month+'/'+year);
+
+
+    //Gọi phương thức để thay đổi ngày, tháng, năm của đối tượng date
+    date.setDay(15);
+    date.setMonth(6);
+    date.setYear(2011);
+
+    alert(day+'/'+month+'/'+year);
+
+
+
+    //Gọi phương thức setDate
+    date.setDate(21, 2, 1999);
+
+    //Gọi phương thức toString:
+    alert(date.toString());
+
+
+</script>
+
+</body>
+</html>

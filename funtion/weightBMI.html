@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let weight=parseFloat(prompt("nhập cân nặng"));
+    let height=parseFloat(prompt("nhập chiều cao"));
+
+    let numeral = weight/(height*height);
+
+    if (numeral<18.5){
+        document.write('Underweight');
+    }else if (numeral>=18.5 && numeral<25){
+        document.write('Normal');
+    }else if (numeral>=25 && numeral<30){
+        document.write('Overweight');
+    }else{
+        document.write('Obese');
+    }
+
+</script>
 </body>
 </html>

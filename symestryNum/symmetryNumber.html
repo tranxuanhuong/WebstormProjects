@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    isPalindrome();
+    function isPalindrome() {
+        let str = prompt("Nhập chuỗi", '');
+        let array = [];
+        for (let i = 0; i < str.length; i++) {
+            array[i] = str[i];
+        }
+        let sallowCopy = array.slice();
+        let arrayReverse = array.reverse();
+        console.log(sallowCopy[0]);
+        console.log(arrayReverse[0]);
+        let check = true;
+        for (let j = 0; j < array.length; j++) {
+            if (sallowCopy[j] !== arrayReverse[j]) {
+                alert("false");
+                check = false;
+            }
+        }
+        if(check){
+            alert("true");
+        }
+    }
+
+</script>
+
+
+</body>
+</html>

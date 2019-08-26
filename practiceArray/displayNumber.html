@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr=new Array(11,2,30,4,5,80,7,18,9,10) ;
+
+    for (let i=0;i<arr.length;i++){
+
+       if (arr[i]>=10){
+           document.write('phần tử đó là '+ arr[i]+'tại'+i+'  '+'<br>');
+       }
+    }
+
+
+    // let maxIndex=0;
+    // for (let i=0;i<arr.length;i++){
+    //     if (maxIndex<arr[i]){
+    //         maxIndex=i;
+    //     }
+    // }
+    //         document.write('max là : ' + maxIndex +'tại '+i );
+
+    let sum=0;
+    let tb=0;
+    for (let i=0;i<arr.length;i++){
+        sum+=arr[i];
+        tb=sum/(arr.length);
+    }
+    document.write('tổng là :'+sum+'<br>');
+    document.write('điểm trung bình là :'+tb+'<br>');
+
+    let reversed = new Array(numbers.length);
+    let lastIndex = numbers.length - 1;
+    for (let i = 0; i < numbers.length; i++) {
+        reversed[i] = numbers[lastIndex - i];
+    }
+
+    numbers = reversed;
+
+    let count=0;
+
+    for (let i=0;i<arr.length;i++){
+        if (arr[i]<0){
+            count++;
+        }
+        document.write('tổng số số <0 là :'+ count);
+
+
+    }
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

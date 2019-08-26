@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+     function Rat( weight, speed, name) {
+
+        this.RatWeight = weight;
+        this.RatSpeed = speed;
+        this.RatName = name;
+        this.isAlive = true;
+        this.Catch = false;
+        this.sound=function () {
+            alert('chít chit')
+        };
+
+    };
+    this.getRatWeight=function(){
+        return this.RatWeight;
+    };
+
+    this.getRatSpeed=function(){
+        return this.RatSpeed;
+    };
+
+    this.getRatName=function(){
+        return this.RatName;
+    };
+
+    this.setRatWWeight=function(weight){
+        this.RatWeight=weight;
+    };
+    this.setRatSpeed=function(speed){
+        this.RatSpeed=speed;
+    };
+    this.setRatName=function(name){
+        this.RatName=name;
+    };
+
+   function Cat( weight, speed, name) {
+
+       this.catWeight = weight;
+       this.catSpeed = speed;
+       this.catName = name;
+
+       this.soundCat=function () {
+         alert('meo meo');
+       };
+
+
+       this.getCatWeight = function () {
+           return this.catWeight;
+       };
+
+       this.getCatSpeed = function () {
+           return this.catSpeed;
+       };
+
+       this.getCatName = function () {
+           return this.catName;
+       };
+
+       this.setCatWeight = function (weight) {
+           this.catWeight = weight;
+       };
+
+       this.setCatSpeed = function (speed) {
+           this.catSpeed = speed;
+
+       };
+
+       this.setCatName = function () {
+           this.catName = name;
+       };
+
+       this.chase = function (rat) {
+           if (this.catSpeed > rat.RatSpeed) {
+               if (rat.isAlive) {
+                   rat.Catch = true;
+                   alert('Mèo' + this.catName + 'đã bắt được chuột' + rat.RatName);
+               }else {
+                   rat.Catch=false;
+                   alert('K bắt đc');
+               }
+           }
+       };
+
+       this.eat = function (rat) {
+           if (rat.Catch){
+               alert("Mèo " + this.catName + " da an chuot " + rat.RatName);
+               this.catWeight+=rat.RatWeight;
+               console.log(this.catWeight);
+           }
+       };
+   }
+
+
+    let rat = new Rat( 5, 500, "Jerry");
+    let cat1=new Cat(10,600,"Tom");
+
+    cat1.chase(rat);
+    cat1.eat(rat);
+
+
+</script>
+
+</body>
+</html>

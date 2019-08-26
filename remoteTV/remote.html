@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function tiv(channel) {
+        this.Channel = channel;
+
+        this.getChannel = function () {
+            return this.Channel;
+        };
+
+        this.setChannel = function (channel) {
+            this.Channel = channel;
+        };
+        this.Channel=function (remote,channel) {
+            if (this.Turn){
+                this.Turn=true;
+                alert('kênh b chuyển là'+this.Channel);
+            }
+
+        };
+        let tv=new tiv(1);
+
+    }
+    function remote(boolean,volume,turn) {
+        this.Boolean=boolean;
+        this.Volume=volume;
+        this.Turn=turn;
+
+        this.getBoolean=function () {
+            return this.Boolean;
+        };
+
+        this.getVolume=function () {
+            return this.volume;
+        };
+
+        this.getTurn=function () {
+            return this.Turn;
+        };
+
+        this.setBoolean=function (boolean) {
+            this.Boolean=boolean;
+        };
+
+        this.setVolume=function (volume) {
+            this.Volume=volume;
+        };
+
+        let remote1=new remote(1,35,"On");
+
+        this.Boolean=function () {
+            if (!this.Turn){
+                this.Turn=true;
+                console.log(this.Turn);
+            }else {
+                this.Turn=false;
+                console.log(this.Turn);
+            }
+
+        };
+
+        this.VolumeIncrease=function (remote) {
+            if (this.Turn){
+                this.Turn=true;
+                if (remote.volume<30){
+                    remote.volume++;
+                    console.log('volume hiện tại là '+ remote.volume);
+                }else {
+                    console.log('âm lượng tối đa');
+                }
+            }
+
+        };
+        this.VolumeReduction=function (remote) {
+            if (this.Turn){
+                this.Turn=true;
+                if (remote.volume>=0){
+                    console.log('âm lượng bây h là '+ remote.volume);
+                    remote.volume--;
+                }else{
+                    console.log('k đc giảm');
+                }
+            }
+        };
+
+
+    }
+
+
+
+
+
+
+    
+
+
+</script>
+
+</body>
+</html>

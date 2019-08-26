@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1340px" height="595px" style="border: 3px solid #d3d3d3;"></canvas>
+<script>
+    //Tạo class hình chữ nhật
+    function Rectangle(x, y, width, height) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+        this.ctx = document.getElementById("myCanvas").getContext("2d");
+        this.perimeter = function () {
+            return (this.width + this.height) * 2;
+        };
+        this.area = function () {
+            return (this.width * this.height);
+        };
+        this.draw = function () {
+            this.ctx.beginPath();
+            this.ctx.rect(this.x, this.y, this.width, this.height);
+        };
+        this.fill = function () {
+            this.ctx.fill();
+        };
+        this.stroke = function () {
+            this.ctx.stroke();
+        };
+        this.fillStyle = function (color) {
+            this.fill();
+            this.fillStyle = color;
+        };
+        this.setWidth = function (width) {
+            this.width = width;
+        };
+        this.setHeight = function (height) {
+            this.height = height;
+        }
+    }
+    //Tạo đối tượng
+    let rectangle = new Rectangle(100, 100, 100, 50);
+    //Hiển thị hình chữ nhật
+    function createRectangle() {
+        rectangle.draw();
+        rectangle.stroke();
+    }
+    // createRectangle();
+    //Thay đổi chiều dài và chiều rộng
+
+
+    rectangle.setWidth(400);
+    rectangle.setHeight(300);
+    createRectangle();
+
+
+    //In ra màn hình chu vi diện tích
+    alert("Chu vi là: " + rectangle.perimeter());
+    alert("Diện tích là: " + rectangle.area());
+</script>
+
+</body>
+</html>

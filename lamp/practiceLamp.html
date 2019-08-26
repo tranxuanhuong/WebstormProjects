@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<img src="lights.jpg" id="lamp" alt="lamp-on" style="height: 500px; width: 300px"/>
+
+<img src="power-button-1.png" id="switch" alt="switch" onclick="turnLight(this.alt)">
+
+<script>
+
+    let switchButton=function (electricLamp) {
+      this.status=false;
+      this.electricLamp=electricLamp;
+      this.connectToLamp=function () {
+          if (this.status){
+              this.electricLamp.turnOn();
+      }else {
+              this.electricLamp.turnOff();
+          }
+    };
+
+        this.switchOff=function(){
+            if(this.status){
+                this.status=false;
+                this.connectToLamp();
+                console.log(electricLamp.status);
+            }
+        };
+        this.switchOn=function () {
+            if (!this.status){
+                this.status=true;
+                this.connectToLamp();
+                console.log(electricLamp.status);
+            }
+
+        };
+    }
+
+    let ElectricLamp = function () {
+        this.status = false;
+        this.turnOff = function () {
+            this.status = false;
+        };
+        this.turnOn = function () {
+            this.status = true;
+        }
+    };
+
+    function turnLight(alt){
+            if (alt=="switchOff"){
+                switchButton.switchOn();
+                document.getElementById('lights').src='lights.jpg';
+                document.getElementById('switch').src='power-button-1.png';
+
+
+            }else {
+                switchButton.switchOff();
+                document.getElementById('lights').src='darkLights.jpg';
+                document.getElementById('switch').src='power-button-2.png';
+            }
+
+        }
+
+        let electricLamp=new ElectricLamp();
+        let switchButton1=new switchButton(electricLamp);
+
+
+
+</script>
+
+</body>
+</html>
